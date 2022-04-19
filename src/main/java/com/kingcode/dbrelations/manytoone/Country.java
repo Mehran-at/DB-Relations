@@ -10,10 +10,9 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "country")
-public @Entity
-class Country {
+public @Entity class Country {
     @JsonIgnore
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "country_id")
     Set<City> cities;
     @Id
