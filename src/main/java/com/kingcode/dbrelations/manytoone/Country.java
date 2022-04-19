@@ -21,5 +21,5 @@ class Country {
     @Column(name = "country_id")
     private Long id;
     @Column(name = "country_name")
-    private String countryName;
+    private String countryname;
 }

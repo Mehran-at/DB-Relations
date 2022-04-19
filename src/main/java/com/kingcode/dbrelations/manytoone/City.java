@@ -1,7 +1,9 @@
 package com.kingcode.dbrelations.manytoone;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 
@@ -10,15 +12,14 @@ import javax.persistence.*;
 @Table(name = "city")
 public @Entity
 class City {
+    @JsonIgnore
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "country_id", insertable = false, updatable = false)
-    Country country;
-    @Column(name = "country_id")
-    private int country_id;
+    private Country country;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "city_id")
     private Long id;
     @Column(name = "city_name")
-    private String cityName;
+    private String cityname;
 }

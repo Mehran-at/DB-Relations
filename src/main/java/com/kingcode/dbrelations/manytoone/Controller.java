@@ -17,30 +17,29 @@ public class Controller {
         return "Home Wel";
     }
 
-    @GetMapping("/addcity")
-    public City saveCities() {
-        City city = new City();
-        Country country = new Country();
+//    @GetMapping("/addcity")
+//    public City saveCitie() {
+//        City city = new City();
+//
+//        city.setCityname("Vienna");
+//        city.setId(10);
+//        Country country = new Country();
+//        country.setId(10L);
+//        country.setCountryName("Austria");
+//        Set<City> cities = new HashSet<>();
+//        cities.add(city);
+//        country.setCities(cities);
+//        city.setCountry(country);
+//
+//        return service.save(city);
+//    }
 
-        city.setCityName("Vienna");
-        city.setCountry(country);
-
-        country.setCountryName("Austria");
-        country.setId(1L);
-        Set<City> cities = new HashSet<>();
-        country.setCities(cities);
-
-        cities.add(city);
-        System.out.println("=========================");
-        return service.save(city);
-    }
-
-    @PostMapping("/addcity")
+    @PostMapping("/add_city")
     public City saveCities(@RequestBody City city) {
         return service.save(city);
     }
 
-    @GetMapping("/getcity")
+    @GetMapping("/getcity/{id}")
     public Optional<City> getCitieById(@PathVariable Long id) {
         return service.getCityById(id);
     }
