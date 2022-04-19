@@ -13,7 +13,7 @@ import java.util.Set;
 public @Entity class Country {
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "country_id")
+    @JoinColumn(name = "country_id", insertable = false, updatable = false)
     Set<City> cities;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

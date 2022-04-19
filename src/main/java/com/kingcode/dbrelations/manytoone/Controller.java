@@ -11,6 +11,8 @@ import java.util.Set;
 public class Controller {
     @Autowired
     CityService service;
+    @Autowired
+    CountryService countryService;
 
     @GetMapping("/home")
     public String get() {
@@ -25,5 +27,10 @@ public class Controller {
     @GetMapping("/getcity/{id}")
     public Optional<City> getCitieById(@PathVariable Long id) {
         return service.getCityById(id);
+    }
+
+    @PostMapping("/savecountry")
+    public Country getCitieById(@RequestBody Country country) {
+        return countryService.save(country);
     }
 }

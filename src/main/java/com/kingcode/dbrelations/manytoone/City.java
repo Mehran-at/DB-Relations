@@ -21,4 +21,6 @@ class City {
     private Long id;
     @Column(name = "city_name")
     private String cityname;
+    @Column(name = "country_id")
+    private int countryid;
 }
