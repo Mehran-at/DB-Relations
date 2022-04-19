@@ -1,0 +1,24 @@
+-- DROP TABLE IF EXISTS person;
+-- DROP TABLE IF EXISTS car;
+-- CREATE TABLE car
+-- (
+--     car_id BIGSERIAL PRIMARY KEY ,
+--     brand VARCHAR(100)
+-- );
+--
+-- CREATE TABLE person
+-- (
+--     person_id BIGSERIAL NOT NULL  PRIMARY KEY ,
+--     name VARCHAR(100),
+--     car_id_fk BIGSERIAL NOT NULL REFERENCES car (car_id),
+--     UNIQUE (car_id_fk)
+-- );
+--
+-- INSERT INTO car (brand) VALUES ('Land Rover');
+-- INSERT INTO car (brand) VALUES ('AUDI');
+-- INSERT INTO car (brand) VALUES ('BENZ');
+--
+-- INSERT INTO person (name, car_id_fk) VALUES ('James', 1);
+-- INSERT INTO person (name, car_id_fk) VALUES ('Mehran',2);
+-- INSERT INTO person (name, car_id_fk) VALUES ('David',3);
+--
